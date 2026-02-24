@@ -40,7 +40,7 @@ export default function Problem() {
     <section className="py-28 md:py-40 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/[0.02] to-transparent" />
 
-      <div className="relative max-w-4xl mx-auto px-6">
+      <div className="relative max-w-5xl mx-auto px-6 md:px-10">
         <div className="text-center mb-20">
           <p className="reveal text-xs font-medium tracking-[0.2em] uppercase text-accent-light mb-5">
             The Problem
@@ -52,7 +52,7 @@ export default function Problem() {
           </h2>
         </div>
 
-        <div className="grid gap-5 md:gap-6 max-w-2xl mx-auto">
+        <div className="grid gap-5 md:gap-6 max-w-3xl mx-auto">
           {problems.map((problem, i) => (
             <div
               key={i}

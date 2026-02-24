@@ -38,7 +38,7 @@ export default function HowItWorks() {
     <section id="how-it-works" className="py-28 md:py-40 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bg-elevated/50 to-transparent" />
 
-      <div className="relative max-w-6xl mx-auto px-6">
+      <div className="relative max-w-5xl mx-auto px-6 md:px-10">
         <div className="text-center mb-20">
           <p className="reveal text-xs font-medium tracking-[0.2em] uppercase text-accent-light mb-5">
             The Process

@@ -5,7 +5,7 @@ export default function About() {
     <section id="about" className="py-28 md:py-40 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bg-elevated/50 to-transparent" />
 
-      <div className="relative max-w-4xl mx-auto px-6">
+      <div className="relative max-w-5xl mx-auto px-6 md:px-10">
         <div className="grid md:grid-cols-5 gap-12 md:gap-20 items-start">
           {/* Photo placeholder */}
           <div className="reveal md:col-span-2 flex justify-center">

@@ -26,7 +26,7 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="max-w-5xl mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
         <a
           href="#"
           className="text-lg font-semibold tracking-tight text-text-primary hover:text-accent-light transition-colors"

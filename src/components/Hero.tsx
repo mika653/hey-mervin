@@ -18,7 +18,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 md:py-40">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-10 py-24 md:py-40">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Copy */}
           <div className="text-center lg:text-left">

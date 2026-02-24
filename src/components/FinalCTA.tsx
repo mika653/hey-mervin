@@ -8,7 +8,7 @@ export default function FinalCTA() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-accent/[0.06] blur-[150px]" />
       </div>
 
-      <div className="relative max-w-3xl mx-auto px-6 text-center">
+      <div className="relative max-w-4xl mx-auto px-6 md:px-10 text-center">
         <div className="reveal">
           <p className="text-xs font-medium tracking-[0.2em] uppercase text-accent-light mb-8">
             Ready?

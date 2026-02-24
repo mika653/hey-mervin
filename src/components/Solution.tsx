@@ -60,7 +60,7 @@ const services = [
 export default function Solution() {
   return (
     <section id="solution" className="py-28 md:py-40 relative">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6 md:px-10">
         <div className="text-center mb-20">
           <p className="reveal text-xs font-medium tracking-[0.2em] uppercase text-accent-light mb-5">
             The Solution
