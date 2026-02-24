@@ -59,10 +59,10 @@ const services = [
 
 export default function Solution() {
   return (
-    <section id="solution" className="py-24 md:py-32 relative">
-      <div className="max-w-6xl mx-auto px-5">
-        <div className="text-center mb-16">
-          <p className="reveal text-xs font-medium tracking-[0.2em] uppercase text-accent-light mb-4">
+    <section id="solution" className="py-28 md:py-40 relative">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-20">
+          <p className="reveal text-xs font-medium tracking-[0.2em] uppercase text-accent-light mb-5">
             The Solution
           </p>
           <h2 className="reveal text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-text-primary leading-tight">
@@ -74,16 +74,16 @@ export default function Solution() {
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {services.map((service, i) => (
             <div
               key={service.title}
-              className={`reveal reveal-delay-${(i % 4) + 1} group p-6 md:p-7 rounded-xl border border-border-subtle bg-bg-card/40 hover:border-accent/25 hover:bg-accent-glow transition-all duration-500 cursor-default`}
+              className={`reveal reveal-delay-${(i % 4) + 1} group p-7 md:p-9 rounded-xl border border-border-subtle bg-bg-card/40 hover:border-accent/25 hover:bg-accent-glow transition-all duration-500 cursor-default`}
             >
-              <div className="w-11 h-11 rounded-lg bg-surface flex items-center justify-center text-text-muted group-hover:text-accent-light group-hover:bg-accent/10 transition-all duration-300 mb-4">
+              <div className="w-12 h-12 rounded-lg bg-surface flex items-center justify-center text-text-muted group-hover:text-accent-light group-hover:bg-accent/10 transition-all duration-300 mb-5">
                 {service.icon}
               </div>
-              <h3 className="text-lg font-semibold text-text-primary mb-1.5">
+              <h3 className="text-lg font-semibold text-text-primary mb-2.5">
                 {service.title}
               </h3>
               <p className="text-sm text-text-secondary leading-relaxed">
@@ -93,7 +93,7 @@ export default function Solution() {
           ))}
         </div>
 
-        <div className="reveal mt-14 text-center">
+        <div className="reveal mt-20 text-center">
           <p className="text-base md:text-lg text-text-secondary max-w-lg mx-auto">
             Every build starts from how your business actually runs —{" "}
             <span className="text-text-primary font-medium">

@@ -35,12 +35,12 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 md:py-32 relative overflow-hidden">
+    <section id="how-it-works" className="py-28 md:py-40 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bg-elevated/50 to-transparent" />
 
-      <div className="relative max-w-6xl mx-auto px-5">
-        <div className="text-center mb-16">
-          <p className="reveal text-xs font-medium tracking-[0.2em] uppercase text-accent-light mb-4">
+      <div className="relative max-w-6xl mx-auto px-6">
+        <div className="text-center mb-20">
+          <p className="reveal text-xs font-medium tracking-[0.2em] uppercase text-accent-light mb-5">
             The Process
           </p>
           <h2 className="reveal text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-text-primary leading-tight">
@@ -50,12 +50,12 @@ export default function HowItWorks() {
 
         {/* Mobile: horizontal scroll */}
         <div className="md:hidden">
-          <div className="flex gap-4 overflow-x-auto hide-scrollbar pb-4 snap-x snap-mandatory -mx-5 px-5">
-            {steps.map((step, i) => (
-              <StepCard key={step.number} step={step} index={i} />
+          <div className="flex gap-5 overflow-x-auto hide-scrollbar pb-4 snap-x snap-mandatory -mx-6 px-6">
+            {steps.map((step) => (
+              <StepCard key={step.number} step={step} />
             ))}
           </div>
-          <div className="flex justify-center gap-2 mt-4">
+          <div className="flex justify-center gap-2 mt-6">
             {steps.map((_, i) => (
               <div key={i} className="w-8 h-1 rounded-full bg-border" />
             ))}
@@ -63,7 +63,7 @@ export default function HowItWorks() {
         </div>
 
         {/* Desktop: grid with connector lines */}
-        <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="hidden md:grid md:grid-cols-3 gap-7 lg:gap-9">
           {steps.map((step, i) => (
             <div key={step.number} className={`reveal reveal-delay-${i + 1} relative`}>
               <StepCardDesktop step={step} isLast={i === steps.length - 1} />
@@ -77,21 +77,19 @@ export default function HowItWorks() {
 
 function StepCard({
   step,
-  index,
 }: {
   step: (typeof steps)[number];
-  index: number;
 }) {
   return (
-    <div className="min-w-[280px] max-w-[300px] snap-center flex-shrink-0">
-      <div className="h-full p-6 rounded-xl border border-border-subtle bg-bg-card/60 relative overflow-hidden">
-        <div className="absolute top-4 right-4 text-5xl font-black text-text-primary/[0.04]">
+    <div className="min-w-[300px] max-w-[320px] snap-center flex-shrink-0">
+      <div className="h-full p-8 rounded-xl border border-border-subtle bg-bg-card/60 relative overflow-hidden">
+        <div className="absolute top-5 right-5 text-5xl font-black text-text-primary/[0.04]">
           {step.number}
         </div>
-        <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent-light mb-5">
+        <div className="w-13 h-13 rounded-lg bg-accent/10 flex items-center justify-center text-accent-light mb-6">
           {step.icon}
         </div>
-        <h3 className="text-xl font-bold text-text-primary mb-3">
+        <h3 className="text-xl font-bold text-text-primary mb-4">
           {step.title}
         </h3>
         <p className="text-sm text-text-secondary leading-relaxed">
@@ -110,21 +108,21 @@ function StepCardDesktop({
   isLast: boolean;
 }) {
   return (
-    <div className="group h-full p-7 rounded-xl border border-border-subtle bg-bg-card/40 hover:border-accent/25 hover:bg-accent-glow transition-all duration-500 relative overflow-hidden">
-      <div className="absolute top-5 right-5 text-6xl font-black text-text-primary/[0.04] group-hover:text-accent/[0.06] transition-colors duration-500">
+    <div className="group h-full p-8 md:p-9 rounded-xl border border-border-subtle bg-bg-card/40 hover:border-accent/25 hover:bg-accent-glow transition-all duration-500 relative overflow-hidden">
+      <div className="absolute top-6 right-6 text-6xl font-black text-text-primary/[0.04] group-hover:text-accent/[0.06] transition-colors duration-500">
         {step.number}
       </div>
-      <div className="w-12 h-12 rounded-lg bg-surface flex items-center justify-center text-text-muted group-hover:text-accent-light group-hover:bg-accent/10 transition-all duration-300 mb-5">
+      <div className="w-13 h-13 rounded-lg bg-surface flex items-center justify-center text-text-muted group-hover:text-accent-light group-hover:bg-accent/10 transition-all duration-300 mb-6">
         {step.icon}
       </div>
-      <h3 className="text-xl font-bold text-text-primary mb-3">
+      <h3 className="text-xl font-bold text-text-primary mb-4">
         {step.title}
       </h3>
       <p className="text-sm text-text-secondary leading-relaxed">
         {step.desc}
       </p>
       {!isLast && (
-        <div className="hidden lg:block absolute top-1/2 -right-4 lg:-right-5 w-8 lg:w-10 h-[1px] bg-border-subtle" />
+        <div className="hidden lg:block absolute top-1/2 -right-5 lg:-right-6 w-10 lg:w-12 h-[1px] bg-border-subtle" />
       )}
     </div>
   );

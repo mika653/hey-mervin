@@ -26,16 +26,16 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
         <a
           href="#"
           className="text-lg font-semibold tracking-tight text-text-primary hover:text-accent-light transition-colors"
         >
-          mervin<span className="text-accent">.</span>
+          hey mervin<span className="text-accent">!</span>
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -47,7 +47,7 @@ export default function Header() {
           ))}
           <a
             href="#cta"
-            className="text-sm font-medium px-5 py-2.5 rounded-full bg-accent hover:bg-accent-light text-white whitespace-nowrap transition-all duration-300 hover:shadow-lg hover:shadow-accent/25"
+            className="text-sm font-medium px-6 py-3 rounded-full bg-accent hover:bg-accent-light text-white whitespace-nowrap transition-all duration-300 hover:shadow-lg hover:shadow-accent/25"
           >
             Book a Call
           </a>
@@ -83,7 +83,7 @@ export default function Header() {
           mobileOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <nav className="flex flex-col items-center gap-6 py-8 bg-bg/95 backdrop-blur-xl border-b border-border-subtle">
+        <nav className="flex flex-col items-center gap-8 py-10 bg-bg/95 backdrop-blur-xl border-b border-border-subtle">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -97,7 +97,7 @@ export default function Header() {
           <a
             href="#cta"
             onClick={() => setMobileOpen(false)}
-            className="text-sm font-medium px-6 py-3 rounded-full bg-accent hover:bg-accent-light text-white whitespace-nowrap transition-all duration-300"
+            className="text-sm font-medium px-7 py-3.5 rounded-full bg-accent hover:bg-accent-light text-white whitespace-nowrap transition-all duration-300"
           >
             Book a Call
           </a>

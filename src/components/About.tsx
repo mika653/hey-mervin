@@ -2,11 +2,11 @@
 
 export default function About() {
   return (
-    <section id="about" className="py-24 md:py-32 relative">
+    <section id="about" className="py-28 md:py-40 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bg-elevated/50 to-transparent" />
 
-      <div className="relative max-w-4xl mx-auto px-5">
-        <div className="grid md:grid-cols-5 gap-10 md:gap-16 items-center">
+      <div className="relative max-w-4xl mx-auto px-6">
+        <div className="grid md:grid-cols-5 gap-12 md:gap-20 items-start">
           {/* Photo placeholder */}
           <div className="reveal md:col-span-2 flex justify-center">
             <div className="relative">
@@ -27,28 +27,36 @@ export default function About() {
 
           {/* Bio */}
           <div className="md:col-span-3">
-            <p className="reveal text-xs font-medium tracking-[0.2em] uppercase text-accent-light mb-4">
+            <p className="reveal text-xs font-medium tracking-[0.2em] uppercase text-accent-light mb-5">
               The Builder
             </p>
-            <h2 className="reveal text-3xl md:text-4xl font-bold tracking-tight text-text-primary mb-6">
-              Built by Mervin De Castro
+            <h2 className="reveal text-3xl md:text-4xl font-bold tracking-tight text-text-primary mb-8">
+              Hey, I&apos;m Mervin!
             </h2>
-            <div className="space-y-4">
+            <div className="space-y-6">
               <p className="reveal reveal-delay-1 text-base text-text-secondary leading-relaxed">
-                Automation strategist and custom systems builder helping
-                businesses move from chaos to clarity.
+                I&apos;m a certified HighLevel specialist who gets genuinely
+                excited about solving automation puzzles. You know those
+                repetitive tasks that eat up your team&apos;s time? Or when your
+                tools just won&apos;t talk to each other properly? That&apos;s
+                exactly the kind of challenge I enjoy tackling.
               </p>
-              <p className="reveal reveal-delay-2 text-base text-text-secondary leading-relaxed">
-                I work with founders, agencies, and growing teams to replace
-                fragmented tools and manual processes with streamlined, custom-built
-                systems that actually fit how they operate.
+              <p className="reveal reveal-delay-2 text-base text-text-secondary leading-relaxed mb-2">
+                I help business owners who are dealing with:
               </p>
-              <p className="reveal reveal-delay-3 text-base text-text-secondary leading-relaxed">
-                Every project starts with one question:{" "}
-                <span className="text-text-primary font-medium italic">
-                  &quot;What does your business actually need?&quot;
-                </span>
-              </p>
+              <ul className="reveal reveal-delay-3 space-y-4">
+                {[
+                  "Manual processes that feel like they should be automated by now",
+                  "Tools that don't play nicely together (even when they're supposed to)",
+                  "Workflows that work sometimes, but break when you need them most",
+                  "The feeling that technology should be making life easier, not harder",
+                ].map((item) => (
+                  <li key={item} className="flex gap-3 text-base text-text-secondary leading-relaxed">
+                    <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-accent mt-2.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

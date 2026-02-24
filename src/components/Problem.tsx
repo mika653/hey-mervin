@@ -37,12 +37,12 @@ const problems = [
 
 export default function Problem() {
   return (
-    <section className="py-24 md:py-32 relative">
+    <section className="py-28 md:py-40 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/[0.02] to-transparent" />
 
-      <div className="relative max-w-4xl mx-auto px-5">
-        <div className="text-center mb-16">
-          <p className="reveal text-xs font-medium tracking-[0.2em] uppercase text-accent-light mb-4">
+      <div className="relative max-w-4xl mx-auto px-6">
+        <div className="text-center mb-20">
+          <p className="reveal text-xs font-medium tracking-[0.2em] uppercase text-accent-light mb-5">
             The Problem
           </p>
           <h2 className="reveal text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-text-primary leading-tight">
@@ -52,13 +52,13 @@ export default function Problem() {
           </h2>
         </div>
 
-        <div className="grid gap-4 md:gap-5 max-w-2xl mx-auto">
+        <div className="grid gap-5 md:gap-6 max-w-2xl mx-auto">
           {problems.map((problem, i) => (
             <div
               key={i}
-              className={`reveal reveal-delay-${i + 1} group flex items-center gap-5 p-5 md:p-6 rounded-xl border border-border-subtle bg-bg-card/50 hover:border-accent/20 hover:bg-accent-glow transition-all duration-500`}
+              className={`reveal reveal-delay-${i + 1} group flex items-center gap-6 p-6 md:p-8 rounded-xl border border-border-subtle bg-bg-card/50 hover:border-accent/20 hover:bg-accent-glow transition-all duration-500`}
             >
-              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-surface flex items-center justify-center text-text-muted group-hover:text-accent-light group-hover:bg-accent/10 transition-all duration-300">
+              <div className="flex-shrink-0 w-11 h-11 rounded-lg bg-surface flex items-center justify-center text-text-muted group-hover:text-accent-light group-hover:bg-accent/10 transition-all duration-300">
                 {problem.icon}
               </div>
               <p className="text-base md:text-lg text-text-secondary group-hover:text-text-primary transition-colors duration-300">
@@ -68,12 +68,12 @@ export default function Problem() {
           ))}
         </div>
 
-        <div className="reveal mt-16 text-center">
+        <div className="reveal mt-20 text-center">
           <div className="inline-block">
             <p className="text-lg md:text-xl font-medium text-text-primary">
               Generic tools create friction.
             </p>
-            <p className="text-lg md:text-xl font-medium bg-gradient-to-r from-gradient-start to-gradient-end bg-clip-text text-transparent mt-1">
+            <p className="text-lg md:text-xl font-medium bg-gradient-to-r from-gradient-start to-gradient-end bg-clip-text text-transparent mt-2">
               Custom systems create leverage.
             </p>
           </div>

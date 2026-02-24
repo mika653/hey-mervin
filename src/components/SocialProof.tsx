@@ -36,12 +36,12 @@ const tools = [
 
 export default function SocialProof() {
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden">
+    <section className="py-28 md:py-40 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/[0.02] to-transparent" />
 
-      <div className="relative max-w-6xl mx-auto px-5">
-        <div className="text-center mb-16">
-          <p className="reveal text-xs font-medium tracking-[0.2em] uppercase text-accent-light mb-4">
+      <div className="relative max-w-6xl mx-auto px-6">
+        <div className="text-center mb-20">
+          <p className="reveal text-xs font-medium tracking-[0.2em] uppercase text-accent-light mb-5">
             Proof
           </p>
           <h2 className="reveal text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-text-primary leading-tight">
@@ -52,14 +52,14 @@ export default function SocialProof() {
         </div>
 
         {/* Testimonials */}
-        <div className="grid md:grid-cols-3 gap-4 md:gap-5 mb-16">
+        <div className="grid md:grid-cols-3 gap-5 md:gap-6 mb-20">
           {testimonials.map((t, i) => (
             <div
               key={t.name}
-              className={`reveal reveal-delay-${i + 1} p-6 md:p-7 rounded-xl border border-border-subtle bg-bg-card/40 flex flex-col`}
+              className={`reveal reveal-delay-${i + 1} p-7 md:p-9 rounded-xl border border-border-subtle bg-bg-card/40 flex flex-col`}
             >
               {/* Stars */}
-              <div className="flex gap-1 mb-4">
+              <div className="flex gap-1 mb-5">
                 {[...Array(5)].map((_, j) => (
                   <svg
                     key={j}
@@ -72,7 +72,7 @@ export default function SocialProof() {
                 ))}
               </div>
 
-              <p className="text-sm text-text-secondary leading-relaxed flex-1 mb-5">
+              <p className="text-sm text-text-secondary leading-relaxed flex-1 mb-6">
                 &quot;{t.quote}&quot;
               </p>
 
@@ -80,7 +80,7 @@ export default function SocialProof() {
                 <p className="text-sm font-semibold text-text-primary">
                   {t.name}
                 </p>
-                <p className="text-xs text-text-muted">{t.role}</p>
+                <p className="text-xs text-text-muted mt-1">{t.role}</p>
               </div>
             </div>
           ))}
@@ -88,14 +88,14 @@ export default function SocialProof() {
 
         {/* Tools marquee */}
         <div className="reveal">
-          <p className="text-center text-xs font-medium tracking-[0.2em] uppercase text-text-muted mb-6">
+          <p className="text-center text-xs font-medium tracking-[0.2em] uppercase text-text-muted mb-8">
             Tools & Technologies
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {tools.map((tool) => (
               <span
                 key={tool}
-                className="px-4 py-2 rounded-full text-xs font-medium text-text-secondary border border-border-subtle bg-bg-card/40 hover:border-accent/20 hover:text-accent-light transition-all duration-300"
+                className="px-5 py-2.5 rounded-full text-xs font-medium text-text-secondary border border-border-subtle bg-bg-card/40 hover:border-accent/20 hover:text-accent-light transition-all duration-300"
               >
                 {tool}
               </span>

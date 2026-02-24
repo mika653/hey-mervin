@@ -2,7 +2,7 @@
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-16">
+    <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-20">
       {/* Background effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-accent/5 blur-[120px]" />
@@ -18,18 +18,18 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-5 py-20 md:py-32">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 md:py-40">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Copy */}
           <div className="text-center lg:text-left">
             <div className="animate-fade-in-up">
-              <span className="inline-block text-xs font-medium tracking-[0.2em] uppercase text-accent-light mb-6 px-3 py-1.5 rounded-full border border-accent/20 bg-accent-glow">
+              <span className="inline-block text-xs font-medium tracking-[0.2em] uppercase text-accent-light mb-8 px-4 py-2 rounded-full border border-accent/20 bg-accent-glow">
                 Custom Systems Builder
               </span>
             </div>
 
             <h1
-              className="animate-fade-in-up text-[2.25rem] leading-[1.1] md:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-text-primary mb-6"
+              className="animate-fade-in-up text-[2.25rem] leading-[1.1] md:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-text-primary mb-8"
               style={{ animationDelay: "0.15s" }}
             >
               Why buy something built for everyone
@@ -40,7 +40,7 @@ export default function Hero() {
             </h1>
 
             <p
-              className="animate-fade-in-up text-base md:text-lg text-text-secondary max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed"
+              className="animate-fade-in-up text-base md:text-lg text-text-secondary max-w-xl mx-auto lg:mx-0 mb-12 leading-relaxed"
               style={{ animationDelay: "0.3s" }}
             >
               I design and build custom apps, automations, and internal tools
@@ -49,12 +49,12 @@ export default function Hero() {
             </p>
 
             <div
-              className="animate-fade-in-up flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              className="animate-fade-in-up flex flex-col sm:flex-row gap-5 justify-center lg:justify-start"
               style={{ animationDelay: "0.45s" }}
             >
               <a
                 href="#cta"
-                className="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-accent text-white font-medium text-base whitespace-nowrap transition-all duration-300 hover:bg-accent-light hover:shadow-xl hover:shadow-accent/25 hover:-translate-y-0.5 animate-pulse-glow"
+                className="group inline-flex items-center justify-center gap-2.5 px-9 py-5 rounded-full bg-accent text-white font-medium text-base whitespace-nowrap transition-all duration-300 hover:bg-accent-light hover:shadow-xl hover:shadow-accent/25 hover:-translate-y-0.5 animate-pulse-glow"
               >
                 Book a Strategy Call
                 <svg
@@ -73,7 +73,7 @@ export default function Hero() {
               </a>
               <a
                 href="#how-it-works"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-border text-text-secondary font-medium text-base whitespace-nowrap transition-all duration-300 hover:border-accent/40 hover:text-text-primary hover:bg-accent-glow"
+                className="inline-flex items-center justify-center gap-2 px-9 py-5 rounded-full border border-border text-text-secondary font-medium text-base whitespace-nowrap transition-all duration-300 hover:border-accent/40 hover:text-text-primary hover:bg-accent-glow"
               >
                 See How It Works
               </a>
@@ -90,7 +90,7 @@ export default function Hero() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in" style={{ animationDelay: "1.2s" }}>
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-fade-in" style={{ animationDelay: "1.2s" }}>
           <div className="w-5 h-8 rounded-full border-2 border-text-muted/40 flex justify-center pt-1.5">
             <div className="w-1 h-2 rounded-full bg-text-muted/60 animate-bounce" />
           </div>
@@ -105,7 +105,7 @@ function DashboardMockup() {
     <div className="relative animate-float">
       <div className="relative rounded-2xl border border-border bg-bg-card/80 backdrop-blur-sm overflow-hidden shadow-2xl shadow-black/30">
         {/* Title bar */}
-        <div className="flex items-center gap-2 px-4 py-3 border-b border-border-subtle">
+        <div className="flex items-center gap-2 px-5 py-3.5 border-b border-border-subtle">
           <div className="flex gap-1.5">
             <div className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
             <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
@@ -117,9 +117,9 @@ function DashboardMockup() {
         </div>
 
         {/* Dashboard content */}
-        <div className="p-5 space-y-4">
+        <div className="p-6 space-y-5">
           {/* Top metrics row */}
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-3 gap-3.5">
             {[
               { label: "Revenue", value: "$48.2K", change: "+12.5%" },
               { label: "Clients", value: "284", change: "+8.3%" },
@@ -127,12 +127,12 @@ function DashboardMockup() {
             ].map((metric) => (
               <div
                 key={metric.label}
-                className="rounded-lg bg-surface/60 border border-border-subtle p-3"
+                className="rounded-lg bg-surface/60 border border-border-subtle p-3.5"
               >
                 <p className="text-[10px] text-text-muted uppercase tracking-wider">
                   {metric.label}
                 </p>
-                <p className="text-lg font-semibold text-text-primary mt-0.5">
+                <p className="text-lg font-semibold text-text-primary mt-1">
                   {metric.value}
                 </p>
                 <p className="text-[10px] text-green-400 mt-0.5">
@@ -143,8 +143,8 @@ function DashboardMockup() {
           </div>
 
           {/* Chart area */}
-          <div className="rounded-lg bg-surface/60 border border-border-subtle p-4">
-            <div className="flex items-center justify-between mb-3">
+          <div className="rounded-lg bg-surface/60 border border-border-subtle p-5">
+            <div className="flex items-center justify-between mb-4">
               <p className="text-xs text-text-muted">Pipeline Overview</p>
               <p className="text-[10px] text-accent-light">This month</p>
             </div>
@@ -165,7 +165,7 @@ function DashboardMockup() {
           </div>
 
           {/* Activity rows */}
-          <div className="space-y-2">
+          <div className="space-y-2.5">
             {[
               { action: "New lead captured", time: "2m ago", dot: "bg-green-400" },
               { action: "Invoice auto-sent", time: "15m ago", dot: "bg-accent-light" },
@@ -173,7 +173,7 @@ function DashboardMockup() {
             ].map((item) => (
               <div
                 key={item.action}
-                className="flex items-center gap-3 rounded-lg bg-surface/40 border border-border-subtle px-3 py-2"
+                className="flex items-center gap-3 rounded-lg bg-surface/40 border border-border-subtle px-4 py-2.5"
               >
                 <div className={`w-1.5 h-1.5 rounded-full ${item.dot}`} />
                 <p className="text-xs text-text-secondary flex-1">

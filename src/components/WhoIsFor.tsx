@@ -41,10 +41,10 @@ const audiences = [
 
 export default function WhoIsFor() {
   return (
-    <section className="py-24 md:py-32 relative">
-      <div className="max-w-5xl mx-auto px-5">
-        <div className="text-center mb-16">
-          <p className="reveal text-xs font-medium tracking-[0.2em] uppercase text-accent-light mb-4">
+    <section className="py-28 md:py-40 relative">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="text-center mb-20">
+          <p className="reveal text-xs font-medium tracking-[0.2em] uppercase text-accent-light mb-5">
             Who This Is For
           </p>
           <h2 className="reveal text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-text-primary leading-tight">
@@ -54,17 +54,17 @@ export default function WhoIsFor() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4 md:gap-5">
+        <div className="grid md:grid-cols-2 gap-5 md:gap-6">
           {audiences.map((item, i) => (
             <div
               key={item.title}
-              className={`reveal reveal-delay-${(i % 4) + 1} group flex gap-5 p-6 md:p-7 rounded-xl border border-border-subtle bg-bg-card/40 hover:border-accent/25 hover:bg-accent-glow transition-all duration-500`}
+              className={`reveal reveal-delay-${(i % 4) + 1} group flex gap-6 p-7 md:p-9 rounded-xl border border-border-subtle bg-bg-card/40 hover:border-accent/25 hover:bg-accent-glow transition-all duration-500`}
             >
-              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-surface flex items-center justify-center text-text-muted group-hover:text-accent-light group-hover:bg-accent/10 transition-all duration-300">
+              <div className="flex-shrink-0 w-11 h-11 rounded-lg bg-surface flex items-center justify-center text-text-muted group-hover:text-accent-light group-hover:bg-accent/10 transition-all duration-300">
                 {item.icon}
               </div>
               <div>
-                <h3 className="text-base font-semibold text-text-primary mb-1.5">
+                <h3 className="text-base font-semibold text-text-primary mb-2.5">
                   {item.title}
                 </h3>
                 <p className="text-sm text-text-secondary leading-relaxed">
@@ -75,8 +75,8 @@ export default function WhoIsFor() {
           ))}
         </div>
 
-        <div className="reveal mt-14 text-center">
-          <div className="inline-block px-6 py-3 rounded-full border border-border-subtle bg-bg-card/40">
+        <div className="reveal mt-20 text-center">
+          <div className="inline-block px-8 py-4 rounded-full border border-border-subtle bg-bg-card/40">
             <p className="text-sm md:text-base text-text-secondary">
               This is not for hobbyists.{" "}
               <span className="text-text-primary font-medium">
