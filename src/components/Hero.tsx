@@ -54,11 +54,11 @@ export default function Hero() {
             >
               <a
                 href="#cta"
-                className="group inline-flex items-center justify-center gap-2.5 px-9 py-5 rounded-full bg-accent text-white font-medium text-base whitespace-nowrap transition-all duration-300 hover:bg-accent-light hover:shadow-xl hover:shadow-accent/25 hover:-translate-y-0.5 animate-pulse-glow"
+                className="group inline-flex items-center justify-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-full bg-accent text-white font-semibold text-lg md:text-xl whitespace-nowrap transition-all duration-300 hover:bg-accent-light hover:shadow-xl hover:shadow-accent/25 hover:-translate-y-0.5 animate-pulse-glow"
               >
                 Book a Strategy Call
                 <svg
-                  className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -73,7 +73,7 @@ export default function Hero() {
               </a>
               <a
                 href="#how-it-works"
-                className="inline-flex items-center justify-center gap-2 px-9 py-5 rounded-full border border-border text-text-secondary font-medium text-base whitespace-nowrap transition-all duration-300 hover:border-accent/40 hover:text-text-primary hover:bg-accent-glow"
+                className="inline-flex items-center justify-center gap-2 px-10 py-5 md:px-12 md:py-6 rounded-full border border-border text-text-secondary font-semibold text-lg md:text-xl whitespace-nowrap transition-all duration-300 hover:border-accent/40 hover:text-text-primary hover:bg-accent-glow"
               >
                 See How It Works
               </a>
