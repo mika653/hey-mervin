@@ -47,7 +47,7 @@ export default function Header() {
           ))}
           <a
             href="#cta"
-            className="text-sm font-medium px-5 py-2.5 rounded-full bg-accent hover:bg-accent-light text-white transition-all duration-300 hover:shadow-lg hover:shadow-accent/25"
+            className="text-sm font-medium px-5 py-2.5 rounded-full bg-accent hover:bg-accent-light text-white whitespace-nowrap transition-all duration-300 hover:shadow-lg hover:shadow-accent/25"
           >
             Book a Call
           </a>
@@ -97,7 +97,7 @@ export default function Header() {
           <a
             href="#cta"
             onClick={() => setMobileOpen(false)}
-            className="text-sm font-medium px-6 py-3 rounded-full bg-accent hover:bg-accent-light text-white transition-all duration-300"
+            className="text-sm font-medium px-6 py-3 rounded-full bg-accent hover:bg-accent-light text-white whitespace-nowrap transition-all duration-300"
           >
             Book a Call
           </a>

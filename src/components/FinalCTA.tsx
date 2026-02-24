@@ -30,7 +30,7 @@ export default function FinalCTA() {
         <div className="reveal reveal-delay-2">
           <a
             href="#"
-            className="group inline-flex items-center justify-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-full bg-accent text-white font-semibold text-base md:text-lg transition-all duration-300 hover:bg-accent-light hover:shadow-2xl hover:shadow-accent/30 hover:-translate-y-0.5 animate-pulse-glow"
+            className="group inline-flex items-center justify-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-full bg-accent text-white font-semibold text-base md:text-lg whitespace-nowrap transition-all duration-300 hover:bg-accent-light hover:shadow-2xl hover:shadow-accent/30 hover:-translate-y-0.5 animate-pulse-glow"
           >
             Book Your Custom Build Call
             <svg

@@ -54,7 +54,7 @@ export default function Hero() {
             >
               <a
                 href="#cta"
-                className="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-accent text-white font-medium text-base transition-all duration-300 hover:bg-accent-light hover:shadow-xl hover:shadow-accent/25 hover:-translate-y-0.5 animate-pulse-glow"
+                className="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-accent text-white font-medium text-base whitespace-nowrap transition-all duration-300 hover:bg-accent-light hover:shadow-xl hover:shadow-accent/25 hover:-translate-y-0.5 animate-pulse-glow"
               >
                 Book a Strategy Call
                 <svg
@@ -73,7 +73,7 @@ export default function Hero() {
               </a>
               <a
                 href="#how-it-works"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-border text-text-secondary font-medium text-base transition-all duration-300 hover:border-accent/40 hover:text-text-primary hover:bg-accent-glow"
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-border text-text-secondary font-medium text-base whitespace-nowrap transition-all duration-300 hover:border-accent/40 hover:text-text-primary hover:bg-accent-glow"
               >
                 See How It Works
               </a>
