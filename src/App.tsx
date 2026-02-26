@@ -39,7 +39,7 @@ const Navbar = () => {
           <a href="#solution" className="text-sm font-semibold text-slate-600 hover:text-brand-primary transition-colors">The Fix</a>
           <a href="#how-it-works" className="text-sm font-semibold text-slate-600 hover:text-brand-primary transition-colors">How We Do It</a>
           <a href="#about" className="text-sm font-semibold text-slate-600 hover:text-brand-primary transition-colors">Me</a>
-          <button className="bg-brand-primary text-white px-6 py-2.5 rounded-full text-sm font-bold hover:scale-105 transition-all shadow-lg shadow-blue-200">
+          <button className="bg-brand-coral text-white px-6 py-2.5 rounded-full text-sm font-bold hover:scale-105 transition-all shadow-lg shadow-brand-coral/25">
             Let's Chat
           </button>
         </div>
@@ -149,14 +149,14 @@ const Hero = () => {
             <p className="text-3xl md:text-5xl font-display font-medium leading-tight text-slate-500">
               {displayText}
               <span
-                className={`inline-block w-[3px] h-[1em] bg-brand-primary ml-1 align-middle rounded-full transition-opacity ${
+                className={`inline-block w-[3px] h-[1em] bg-brand-coral ml-1 align-middle rounded-full transition-opacity ${
                   showCursor ? "opacity-100" : "opacity-0"
                 }`}
               />
             </p>
           </div>
 
-          <h2 className="text-5xl md:text-7xl font-display font-bold text-brand-primary mb-10">
+          <h2 className="text-5xl md:text-7xl font-display font-bold mb-10 bg-gradient-to-r from-brand-primary via-brand-violet to-brand-coral bg-clip-text text-transparent">
             I gotchu!
           </h2>
 
@@ -177,10 +177,10 @@ const Hero = () => {
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-brand-primary/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-brand-accent/5 blur-[100px] rounded-full pointer-events-none" />
-      <div className="absolute top-1/3 right-1/3 w-[200px] h-[200px] bg-brand-coral/5 blur-[100px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-1/4 left-0 w-[250px] h-[250px] bg-brand-violet/5 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-brand-primary/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-brand-accent/10 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 right-1/3 w-[250px] h-[250px] bg-brand-coral/10 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-1/4 left-0 w-[300px] h-[300px] bg-brand-violet/10 blur-[100px] rounded-full pointer-events-none" />
     </section>
   );
 };
@@ -194,7 +194,7 @@ const Problem = () => {
   ];
 
   return (
-    <section id="problem" className="py-24 bg-brand-soft/50">
+    <section id="problem" className="py-24 bg-brand-coral/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 text-slate-900">
@@ -210,8 +210,8 @@ const Problem = () => {
                 transition={{ delay: i * 0.1 }}
                 className="flex items-start gap-4"
               >
-                <div className="mt-1 p-1 bg-rose-100 rounded-lg">
-                  <X size={16} className="text-rose-600" />
+                <div className="mt-1 p-1 bg-brand-coral/15 rounded-lg">
+                  <X size={16} className="text-brand-coral" />
                 </div>
                 <p className="text-xl text-slate-700 font-medium">{problem}</p>
               </motion.div>
@@ -230,12 +230,12 @@ const Problem = () => {
 
 const Solution = () => {
   const services = [
-    { icon: <LayoutDashboard className="text-brand-primary" />, title: "Custom CRMs", desc: "Manage your leads exactly how you sell. No more, no less.", bg: "bg-brand-primary/10" },
-    { icon: <Workflow className="text-brand-accent" />, title: "Magic Automations", desc: "Connect your apps and let the robots do the boring stuff.", bg: "bg-brand-accent/10" },
-    { icon: <Database className="text-brand-violet" />, title: "Internal Hubs", desc: "See everything that matters in one beautiful place.", bg: "bg-brand-violet/10" },
-    { icon: <Users className="text-brand-coral" />, title: "Client Portals", desc: "Wow your clients with a space built just for them.", bg: "bg-brand-coral/10" },
-    { icon: <Cpu className="text-brand-mint" />, title: "AI Sidekicks", desc: "Smart tools that help your team think and work faster.", bg: "bg-brand-mint/10" },
-    { icon: <Shield className="text-brand-primary" />, title: "Ops Backbones", desc: "The digital glue that keeps your whole business together.", bg: "bg-brand-primary/10" }
+    { icon: <LayoutDashboard className="text-brand-primary" />, title: "Custom CRMs", desc: "Manage your leads exactly how you sell. No more, no less.", bg: "bg-brand-primary/10", topBorder: "border-t-brand-primary" },
+    { icon: <Workflow className="text-brand-accent" />, title: "Magic Automations", desc: "Connect your apps and let the robots do the boring stuff.", bg: "bg-brand-accent/10", topBorder: "border-t-brand-accent" },
+    { icon: <Database className="text-brand-violet" />, title: "Internal Hubs", desc: "See everything that matters in one beautiful place.", bg: "bg-brand-violet/10", topBorder: "border-t-brand-violet" },
+    { icon: <Users className="text-brand-coral" />, title: "Client Portals", desc: "Wow your clients with a space built just for them.", bg: "bg-brand-coral/10", topBorder: "border-t-brand-coral" },
+    { icon: <Cpu className="text-brand-mint" />, title: "AI Sidekicks", desc: "Smart tools that help your team think and work faster.", bg: "bg-brand-mint/10", topBorder: "border-t-brand-mint" },
+    { icon: <Shield className="text-brand-primary" />, title: "Ops Backbones", desc: "The digital glue that keeps your whole business together.", bg: "bg-brand-primary/10", topBorder: "border-t-brand-primary" }
   ];
 
   return (
@@ -255,7 +255,7 @@ const Solution = () => {
             <motion.div 
               key={i}
               whileHover={{ y: -8, rotate: i % 2 === 0 ? 1 : -1 }}
-              className="p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all"
+              className={`p-8 rounded-[2rem] bg-white border border-slate-100 border-t-4 ${service.topBorder} shadow-sm hover:shadow-xl transition-all`}
             >
               <div className={`w-16 h-16 rounded-2xl ${service.bg} flex items-center justify-center mb-6`}>
                 {service.icon}
@@ -276,19 +276,22 @@ const Process = () => {
       step: "01",
       title: "Audit & Architecture",
       desc: "We map your workflows and identify inefficiencies. We don't just build; we strategize the most efficient path forward.",
-      numColor: "text-brand-coral/30"
+      numColor: "text-brand-coral",
+      dotColor: "bg-brand-coral"
     },
     {
       step: "02",
       title: "Custom Build",
       desc: "We design and develop a system tailored to your exact needs. You get regular updates and a transparent development cycle.",
-      numColor: "text-brand-violet/30"
+      numColor: "text-brand-violet",
+      dotColor: "bg-brand-violet"
     },
     {
       step: "03",
       title: "Optimization & Scale",
       desc: "We refine, automate, and evolve your system as you grow. Our partnership doesn't end at launch; we ensure it scales.",
-      numColor: "text-brand-mint/30"
+      numColor: "text-brand-mint",
+      dotColor: "bg-brand-mint"
     }
   ];
 
@@ -305,6 +308,7 @@ const Process = () => {
         <div className="flex flex-col md:flex-row gap-12 relative">
           {steps.map((step, i) => (
             <div key={i} className="flex-1 relative z-10">
+              <div className={`w-3 h-3 rounded-full ${step.dotColor} mb-4`} />
               <div className={`text-6xl font-display font-black ${step.numColor} mb-6`}>{step.step}</div>
               <h3 className="text-2xl font-display font-bold mb-4">{step.title}</h3>
               <p className="text-gray-400 leading-relaxed">{step.desc}</p>
@@ -315,8 +319,10 @@ const Process = () => {
               )}
             </div>
           ))}
-          {/* Background Gradient */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-brand-primary/20 blur-[120px] pointer-events-none" />
+          {/* Background Gradients */}
+          <div className="absolute top-1/2 left-0 w-1/3 h-full bg-brand-coral/15 blur-[120px] pointer-events-none" />
+          <div className="absolute top-1/2 left-1/3 w-1/3 h-full bg-brand-violet/15 blur-[120px] pointer-events-none" />
+          <div className="absolute top-1/2 right-0 w-1/3 h-full bg-brand-mint/15 blur-[120px] pointer-events-none" />
         </div>
       </div>
     </section>
@@ -325,10 +331,10 @@ const Process = () => {
 
 const WhoItIsFor = () => {
   const targets = [
-    { text: "Founders scaling past spreadsheets", color: "text-brand-primary" },
-    { text: "Agencies tired of duct-taping tools", color: "text-brand-coral" },
-    { text: "Service businesses needing automation", color: "text-brand-violet" },
-    { text: "Businesses that want control and ownership", color: "text-brand-mint" }
+    { text: "Founders scaling past spreadsheets", color: "text-brand-primary", border: "border-l-brand-primary" },
+    { text: "Agencies tired of duct-taping tools", color: "text-brand-coral", border: "border-l-brand-coral" },
+    { text: "Service businesses needing automation", color: "text-brand-violet", border: "border-l-brand-violet" },
+    { text: "Businesses that want control and ownership", color: "text-brand-mint", border: "border-l-brand-mint" }
   ];
 
   return (
@@ -338,7 +344,7 @@ const WhoItIsFor = () => {
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 text-slate-900">Who This Is For</h2>
           <div className="space-y-4 mb-10">
             {targets.map((target, i) => (
-              <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
+              <div key={i} className={`flex items-center gap-4 p-4 rounded-2xl bg-white border border-slate-100 border-l-4 ${target.border} shadow-sm`}>
                 <CheckCircle2 className={target.color} size={24} />
                 <span className="text-lg font-medium text-slate-800">{target.text}</span>
               </div>
@@ -348,17 +354,18 @@ const WhoItIsFor = () => {
             This is not for hobbyists. This is for builders.
           </p>
         </div>
-        <div className="bg-brand-primary rounded-[2.5rem] p-12 text-white relative overflow-hidden shadow-2xl shadow-blue-200">
+        <div className="bg-gradient-to-br from-brand-violet to-brand-primary rounded-[2.5rem] p-12 text-white relative overflow-hidden shadow-2xl shadow-violet-200">
           <div className="relative z-10">
             <h3 className="text-3xl font-display font-bold mb-6">Ready to scale, friend?</h3>
-            <p className="text-blue-100 mb-8 leading-relaxed text-lg">
+            <p className="text-violet-100 mb-8 leading-relaxed text-lg">
               If your team is spending more time managing tools than doing the work, it's time for a custom solution. Let's fix it together.
             </p>
             <button className="w-full bg-brand-accent text-slate-900 py-4 rounded-2xl font-bold text-lg hover:bg-amber-400 transition-all shadow-lg">
               Check my availability
             </button>
           </div>
-          <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-amber-400/20 blur-3xl rounded-full" />
+          <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-brand-coral/20 blur-3xl rounded-full" />
+          <div className="absolute -top-10 -left-10 w-48 h-48 bg-brand-mint/15 blur-3xl rounded-full" />
         </div>
       </div>
     </section>
@@ -369,15 +376,15 @@ const SocialProof = () => {
   const tools = ["HighLevel", "Make.com", "Claude", "OpenAI", "Zapier", "Airtable", "Stripe", "Custom APIs", "HubSpot", "Slack", "Firebase"];
   
   return (
-    <section className="py-24 bg-brand-soft/30 border-y border-blue-50 overflow-hidden">
+    <section className="py-24 bg-brand-violet/5 border-y border-brand-violet/10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="text-brand-primary font-bold uppercase tracking-widest text-sm mb-4">Credibility</p>
-          <h2 className="text-3xl font-display font-bold text-slate-900">Built for businesses that don’t settle for “good enough.”</h2>
+          <p className="text-brand-violet font-bold uppercase tracking-widest text-sm mb-4">Credibility</p>
+          <h2 className="text-3xl font-display font-bold text-slate-900">Built for businesses that don&apos;t settle for &ldquo;good enough.&rdquo;</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-20">
-          <div className="bg-white p-8 rounded-[2rem] border border-blue-50 shadow-sm">
+          <div className="bg-white p-8 rounded-[2rem] border border-brand-mint/20 shadow-sm">
             <div className="flex gap-1 mb-4">
               {[1, 2, 3, 4, 5].map(i => <Zap key={i} size={16} className="fill-brand-accent text-brand-accent" />)}
             </div>
@@ -392,9 +399,9 @@ const SocialProof = () => {
               </div>
             </div>
           </div>
-          <div className="bg-white p-8 rounded-[2rem] border border-blue-50 shadow-sm">
+          <div className="bg-white p-8 rounded-[2rem] border border-brand-coral/20 shadow-sm">
             <div className="flex gap-1 mb-4">
-              {[1, 2, 3, 4, 5].map(i => <Zap key={i} size={16} className="fill-brand-accent text-brand-accent" />)}
+              {[1, 2, 3, 4, 5].map(i => <Zap key={i} size={16} className="fill-brand-coral text-brand-coral" />)}
             </div>
             <p className="text-lg text-slate-700 italic mb-6">
               "The custom CRM Mervin built for us is exactly what we needed. No bloat, just the features we use every single day. It's paid for itself in two months."
@@ -432,6 +439,8 @@ const About = () => {
     <section id="about" className="py-24">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
         <div className="relative">
+          <div className="absolute -top-6 -left-6 w-32 h-32 bg-brand-mint/20 rounded-full blur-2xl pointer-events-none" />
+          <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-brand-violet/20 rounded-full blur-2xl pointer-events-none" />
           <div className="aspect-[4/5] bg-slate-100 rounded-[2.5rem] overflow-hidden shadow-2xl rotate-2">
             <img 
               src="https://picsum.photos/seed/mervin/800/1000" 
@@ -471,12 +480,12 @@ const About = () => {
 
 const FinalCTA = () => {
   return (
-    <section className="py-24 bg-brand-primary text-white relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-br from-brand-primary via-brand-violet to-brand-coral text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
         <h2 className="text-4xl md:text-7xl font-display font-bold mb-8 max-w-4xl mx-auto leading-tight">
-          Stop Forcing Your Business Into Someone Else’s Box.
+          Stop Forcing Your Business Into Someone Else's Box.
         </h2>
-        <p className="text-2xl text-blue-100 mb-12">Let’s build something that actually fits.</p>
+        <p className="text-2xl text-blue-100 mb-12">Let's build something that actually fits.</p>
         <button className="bg-brand-accent text-slate-900 px-12 py-6 rounded-2xl font-bold text-xl hover:scale-105 transition-all shadow-2xl shadow-amber-500/20 flex items-center justify-center gap-3 mx-auto group">
           Let's Chat About Your Build
           <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
