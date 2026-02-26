@@ -166,7 +166,7 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <button className="bg-brand-primary text-white px-8 py-4 rounded-2xl font-bold text-lg hover:scale-105 transition-all flex items-center justify-center gap-2 shadow-xl shadow-blue-200 group">
-              Let&apos;s grab a coffee
+              Let&apos;s make it happen
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>
             <button className="bg-white text-slate-700 border-2 border-slate-100 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
