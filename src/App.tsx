@@ -178,7 +178,9 @@ const Hero = () => {
 
       {/* Decorative Elements */}
       <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-brand-primary/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-amber-400/5 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-brand-accent/5 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 right-1/3 w-[200px] h-[200px] bg-brand-coral/5 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-1/4 left-0 w-[250px] h-[250px] bg-brand-violet/5 blur-[100px] rounded-full pointer-events-none" />
     </section>
   );
 };
@@ -215,8 +217,8 @@ const Problem = () => {
               </motion.div>
             ))}
           </div>
-          <div className="p-8 bg-white rounded-3xl border border-blue-50 shadow-sm inline-block rotate-1">
-            <p className="text-2xl font-display font-bold text-brand-primary">
+          <div className="p-8 bg-white rounded-3xl border border-brand-violet/20 shadow-sm inline-block rotate-1">
+            <p className="text-2xl font-display font-bold text-brand-violet">
               "Generic tools create friction. Custom systems create leverage."
             </p>
           </div>
@@ -228,12 +230,12 @@ const Problem = () => {
 
 const Solution = () => {
   const services = [
-    { icon: <LayoutDashboard className="text-brand-primary" />, title: "Custom CRMs", desc: "Manage your leads exactly how you sell. No more, no less." },
-    { icon: <Workflow className="text-amber-600" />, title: "Magic Automations", desc: "Connect your apps and let the robots do the boring stuff." },
-    { icon: <Database className="text-purple-600" />, title: "Internal Hubs", desc: "See everything that matters in one beautiful place." },
-    { icon: <Users className="text-rose-600" />, title: "Client Portals", desc: "Wow your clients with a space built just for them." },
-    { icon: <Cpu className="text-sky-600" />, title: "AI Sidekicks", desc: "Smart tools that help your team think and work faster." },
-    { icon: <Shield className="text-emerald-600" />, title: "Ops Backbones", desc: "The digital glue that keeps your whole business together." }
+    { icon: <LayoutDashboard className="text-brand-primary" />, title: "Custom CRMs", desc: "Manage your leads exactly how you sell. No more, no less.", bg: "bg-brand-primary/10" },
+    { icon: <Workflow className="text-brand-accent" />, title: "Magic Automations", desc: "Connect your apps and let the robots do the boring stuff.", bg: "bg-brand-accent/10" },
+    { icon: <Database className="text-brand-violet" />, title: "Internal Hubs", desc: "See everything that matters in one beautiful place.", bg: "bg-brand-violet/10" },
+    { icon: <Users className="text-brand-coral" />, title: "Client Portals", desc: "Wow your clients with a space built just for them.", bg: "bg-brand-coral/10" },
+    { icon: <Cpu className="text-brand-mint" />, title: "AI Sidekicks", desc: "Smart tools that help your team think and work faster.", bg: "bg-brand-mint/10" },
+    { icon: <Shield className="text-brand-primary" />, title: "Ops Backbones", desc: "The digital glue that keeps your whole business together.", bg: "bg-brand-primary/10" }
   ];
 
   return (
@@ -255,7 +257,7 @@ const Solution = () => {
               whileHover={{ y: -8, rotate: i % 2 === 0 ? 1 : -1 }}
               className="p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all"
             >
-              <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-6">
+              <div className={`w-16 h-16 rounded-2xl ${service.bg} flex items-center justify-center mb-6`}>
                 {service.icon}
               </div>
               <h3 className="text-2xl font-display font-bold mb-3 text-slate-900">{service.title}</h3>
@@ -273,17 +275,20 @@ const Process = () => {
     {
       step: "01",
       title: "Audit & Architecture",
-      desc: "We map your workflows and identify inefficiencies. We don't just build; we strategize the most efficient path forward."
+      desc: "We map your workflows and identify inefficiencies. We don't just build; we strategize the most efficient path forward.",
+      numColor: "text-brand-coral/30"
     },
     {
       step: "02",
       title: "Custom Build",
-      desc: "We design and develop a system tailored to your exact needs. You get regular updates and a transparent development cycle."
+      desc: "We design and develop a system tailored to your exact needs. You get regular updates and a transparent development cycle.",
+      numColor: "text-brand-violet/30"
     },
     {
       step: "03",
       title: "Optimization & Scale",
-      desc: "We refine, automate, and evolve your system as you grow. Our partnership doesn't end at launch; we ensure it scales."
+      desc: "We refine, automate, and evolve your system as you grow. Our partnership doesn't end at launch; we ensure it scales.",
+      numColor: "text-brand-mint/30"
     }
   ];
 
@@ -300,7 +305,7 @@ const Process = () => {
         <div className="flex flex-col md:flex-row gap-12 relative">
           {steps.map((step, i) => (
             <div key={i} className="flex-1 relative z-10">
-              <div className="text-6xl font-display font-black text-white/10 mb-6">{step.step}</div>
+              <div className={`text-6xl font-display font-black ${step.numColor} mb-6`}>{step.step}</div>
               <h3 className="text-2xl font-display font-bold mb-4">{step.title}</h3>
               <p className="text-gray-400 leading-relaxed">{step.desc}</p>
               {i < steps.length - 1 && (
@@ -320,10 +325,10 @@ const Process = () => {
 
 const WhoItIsFor = () => {
   const targets = [
-    "Founders scaling past spreadsheets",
-    "Agencies tired of duct-taping tools",
-    "Service businesses needing automation",
-    "Businesses that want control and ownership"
+    { text: "Founders scaling past spreadsheets", color: "text-brand-primary" },
+    { text: "Agencies tired of duct-taping tools", color: "text-brand-coral" },
+    { text: "Service businesses needing automation", color: "text-brand-violet" },
+    { text: "Businesses that want control and ownership", color: "text-brand-mint" }
   ];
 
   return (
@@ -334,8 +339,8 @@ const WhoItIsFor = () => {
           <div className="space-y-4 mb-10">
             {targets.map((target, i) => (
               <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
-                <CheckCircle2 className="text-brand-primary" size={24} />
-                <span className="text-lg font-medium text-slate-800">{target}</span>
+                <CheckCircle2 className={target.color} size={24} />
+                <span className="text-lg font-medium text-slate-800">{target.text}</span>
               </div>
             ))}
           </div>
@@ -440,7 +445,7 @@ const About = () => {
           </div>
         </div>
         <div>
-          <p className="text-brand-accent font-bold uppercase tracking-widest text-sm mb-4">The Builder</p>
+          <p className="text-brand-coral font-bold uppercase tracking-widest text-sm mb-4">The Builder</p>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 text-slate-900">Hey, I'm Mervin!</h2>
           <p className="text-xl text-slate-600 leading-relaxed mb-8">
             I'm an automation strategist and custom systems builder who loves helping businesses move from chaos to clarity.
@@ -450,11 +455,11 @@ const About = () => {
           </p>
           <div className="grid grid-cols-2 gap-8">
             <div>
-              <p className="text-4xl font-display font-bold mb-1 text-brand-primary">50+</p>
+              <p className="text-4xl font-display font-bold mb-1 text-brand-violet">50+</p>
               <p className="text-slate-500 font-medium">Custom Builds</p>
             </div>
             <div>
-              <p className="text-4xl font-display font-bold mb-1 text-brand-primary">10k+</p>
+              <p className="text-4xl font-display font-bold mb-1 text-brand-mint">10k+</p>
               <p className="text-slate-500 font-medium">Hours Automated</p>
             </div>
           </div>
@@ -479,8 +484,9 @@ const FinalCTA = () => {
       </div>
       {/* Background Glows */}
       <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-400 blur-[160px] rounded-full" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-400 blur-[160px] rounded-full" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-accent blur-[160px] rounded-full" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-violet blur-[160px] rounded-full" />
+        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-brand-coral blur-[140px] rounded-full" />
       </div>
     </section>
   );
