@@ -3,24 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { motion, useScroll, useTransform } from "motion/react";
-import { 
-  ArrowRight, 
-  CheckCircle2, 
-  Layers, 
-  Zap, 
-  Shield, 
-  Users, 
-  Cpu, 
-  LayoutDashboard, 
-  Workflow, 
-  Database, 
-  MessageSquare,
+import { motion } from "motion/react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Zap,
+  Shield,
+  Users,
+  Cpu,
+  LayoutDashboard,
+  Workflow,
+  Database,
   ChevronRight,
   Menu,
   X
 } from "lucide-react";
-import { useState, useRef } from "react";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -72,29 +70,103 @@ const Navbar = () => {
   );
 };
 
+const rotatingQuestions = [
+  "can you build me a custom web app?",
+  "can you help me automate my business?",
+  "can you build me a CRM that actually works?",
+  "can you connect all my tools together?",
+  "can you build me a client portal?",
+  "can you set up AI for my workflow?",
+];
+
 const Hero = () => {
+  const [displayText, setDisplayText] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
+
+  // Blinking cursor
+  useEffect(() => {
+    const id = setInterval(() => setShowCursor((p) => !p), 530);
+    return () => clearInterval(id);
+  }, []);
+
+  // Typewriter effect
+  useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout>;
+    let idx = 0;
+    let charPos = 0;
+    let deleting = false;
+
+    const tick = () => {
+      const question = rotatingQuestions[idx];
+
+      if (!deleting) {
+        charPos++;
+        setDisplayText(question.slice(0, charPos));
+
+        if (charPos === question.length) {
+          deleting = true;
+          timeout = setTimeout(tick, 2000);
+          return;
+        }
+        timeout = setTimeout(tick, 50 + Math.random() * 30);
+      } else {
+        charPos--;
+        setDisplayText(question.slice(0, charPos));
+
+        if (charPos === 0) {
+          deleting = false;
+          idx = (idx + 1) % rotatingQuestions.length;
+          timeout = setTimeout(tick, 400);
+          return;
+        }
+        timeout = setTimeout(tick, 25);
+      }
+    };
+
+    timeout = setTimeout(tick, 600);
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="max-w-4xl"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 border border-amber-200 text-amber-700 text-xs font-bold uppercase tracking-wider mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 border border-amber-200 text-amber-700 text-xs font-bold uppercase tracking-wider mb-8">
             <Zap size={14} className="fill-amber-500" />
-            Your Friendly Neighborhood Builder
+            Custom Apps & Automation Builder
           </div>
-          <h1 className="text-5xl md:text-7xl font-display font-bold leading-[1.1] mb-8 text-slate-900">
-            Why buy something built for everyone <br />
-            <span className="text-brand-primary">when we can build something just for you?</span>
+
+          <h1 className="text-5xl md:text-7xl font-display font-bold leading-[1.1] mb-4 text-slate-900">
+            Hey Mervin,
           </h1>
+
+          <div className="min-h-[4.5rem] md:min-h-[5.5rem] mb-4">
+            <p className="text-3xl md:text-5xl font-display font-medium leading-tight text-slate-500">
+              {displayText}
+              <span
+                className={`inline-block w-[3px] h-[1em] bg-brand-primary ml-1 align-middle rounded-full transition-opacity ${
+                  showCursor ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            </p>
+          </div>
+
+          <h2 className="text-5xl md:text-7xl font-display font-bold text-brand-primary mb-10">
+            I gotchu!
+          </h2>
+
           <p className="text-xl text-slate-600 mb-10 max-w-xl leading-relaxed">
-            Hey friend! I'm here to build the custom apps and automations your business actually needs. No templates, no compromises—just tools that work the way you do.
+            Custom apps, automations, and internal tools — built exactly for how your business runs. No templates, no compromises.
           </p>
+
           <div className="flex flex-col sm:flex-row gap-4">
             <button className="bg-brand-primary text-white px-8 py-4 rounded-2xl font-bold text-lg hover:scale-105 transition-all flex items-center justify-center gap-2 shadow-xl shadow-blue-200 group">
-              Let's grab a coffee
+              Let&apos;s grab a coffee
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>
             <button className="bg-white text-slate-700 border-2 border-slate-100 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
@@ -102,77 +174,11 @@ const Hero = () => {
             </button>
           </div>
         </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative"
-        >
-          {/* Mockup UI */}
-          <div className="relative z-10 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden aspect-[4/3] md:aspect-square lg:aspect-[4/3]">
-            <div className="h-12 bg-gray-50 border-b border-gray-100 flex items-center px-4 gap-2">
-              <div className="w-3 h-3 rounded-full bg-red-400" />
-              <div className="w-3 h-3 rounded-full bg-yellow-400" />
-              <div className="w-3 h-3 rounded-full bg-green-400" />
-            </div>
-            <div className="p-6 grid grid-cols-12 gap-4 h-full">
-              <div className="col-span-3 space-y-4">
-                <div className="h-8 bg-gray-100 rounded-lg w-full" />
-                <div className="h-4 bg-gray-50 rounded-lg w-3/4" />
-                <div className="h-4 bg-gray-50 rounded-lg w-1/2" />
-                <div className="h-4 bg-gray-50 rounded-lg w-2/3" />
-              </div>
-              <div className="col-span-9 space-y-4">
-                <div className="grid grid-cols-3 gap-4">
-                  <motion.div 
-                    animate={{ y: [0, -5, 0] }}
-                    transition={{ duration: 4, repeat: Infinity }}
-                    className="h-24 bg-emerald-50 rounded-xl border border-emerald-100 p-4"
-                  >
-                    <div className="w-8 h-8 bg-emerald-200 rounded-lg mb-2" />
-                    <div className="h-2 bg-emerald-200 rounded w-full" />
-                  </motion.div>
-                  <motion.div 
-                    animate={{ y: [0, 5, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-                    className="h-24 bg-blue-50 rounded-xl border border-blue-100 p-4"
-                  >
-                    <div className="w-8 h-8 bg-blue-200 rounded-lg mb-2" />
-                    <div className="h-2 bg-blue-200 rounded w-full" />
-                  </motion.div>
-                  <motion.div 
-                    animate={{ y: [0, -3, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, delay: 2 }}
-                    className="h-24 bg-purple-50 rounded-xl border border-purple-100 p-4"
-                  >
-                    <div className="w-8 h-8 bg-purple-200 rounded-lg mb-2" />
-                    <div className="h-2 bg-purple-200 rounded w-full" />
-                  </motion.div>
-                </div>
-                <div className="h-48 bg-gray-50 rounded-xl border border-gray-100 p-4">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="h-4 bg-gray-200 rounded w-1/4" />
-                    <div className="h-4 bg-gray-200 rounded w-1/6" />
-                  </div>
-                  <div className="space-y-3">
-                    {[1, 2, 3].map(i => (
-                      <div key={i} className="flex items-center gap-4">
-                        <div className="w-8 h-8 bg-gray-200 rounded-full" />
-                        <div className="h-3 bg-gray-100 rounded flex-1" />
-                        <div className="h-3 bg-gray-100 rounded w-12" />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* Decorative Elements */}
-          <div className="absolute -top-10 -right-10 w-40 h-40 bg-emerald-400/10 blur-3xl rounded-full" />
-          <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-blue-400/10 blur-3xl rounded-full" />
-        </motion.div>
       </div>
+
+      {/* Decorative Elements */}
+      <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-brand-primary/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-amber-400/5 blur-[100px] rounded-full pointer-events-none" />
     </section>
   );
 };
