@@ -354,7 +354,7 @@ const WhoItIsFor = () => {
             This is not for hobbyists. This is for builders.
           </p>
         </div>
-        <div className="bg-gradient-to-br from-brand-violet to-brand-primary rounded-[2.5rem] p-12 text-white relative overflow-hidden shadow-2xl shadow-violet-200">
+        <div className="bg-gradient-to-br from-brand-primary to-brand-coral rounded-[2.5rem] p-12 text-white relative overflow-hidden shadow-2xl shadow-blue-200">
           <div className="relative z-10">
             <h3 className="text-3xl font-display font-bold mb-6">Ready to scale, friend?</h3>
             <p className="text-violet-100 mb-8 leading-relaxed text-lg">
