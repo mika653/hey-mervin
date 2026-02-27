@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import {
   ArrowRight,
   CheckCircle2,
@@ -19,6 +19,93 @@ import {
   X
 } from "lucide-react";
 import { useState, useEffect } from "react";
+
+const SplashScreen = ({ onComplete }: { onComplete: () => void }) => {
+  useEffect(() => {
+    const timer = setTimeout(onComplete, 2200);
+    return () => clearTimeout(timer);
+  }, [onComplete]);
+
+  const dotColors = ["bg-brand-coral", "bg-brand-mint", "bg-brand-violet"];
+  const dotOffsets = [0, 120, 240]; // degrees apart
+
+  return (
+    <motion.div
+      className="fixed inset-0 z-[100] bg-white flex items-center justify-center"
+      exit={{ scale: 1.1, opacity: 0 }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
+    >
+      <div className="relative flex flex-col items-center">
+        {/* Orbiting dots */}
+        {dotOffsets.map((offset, i) => (
+          <motion.div
+            key={i}
+            className={`absolute w-4 h-4 rounded-full ${dotColors[i]}`}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{
+              opacity: [0, 1, 1, 0],
+              scale: [0, 1, 1, 0],
+              rotate: [offset, offset + 360, offset + 360, offset + 360],
+            }}
+            transition={{
+              duration: 1.2,
+              times: [0, 0.15, 0.6, 0.8],
+              ease: "easeInOut",
+            }}
+            style={{
+              top: "50%",
+              left: "50%",
+              marginTop: -8,
+              marginLeft: -8,
+              transformOrigin: "8px 8px",
+              // @ts-expect-error Framer Motion handles this transform composition
+              "--orbit-radius": "60px",
+            } as React.CSSProperties}
+          >
+            <motion.div
+              className={`w-4 h-4 rounded-full ${dotColors[i]}`}
+              animate={{
+                x: [60, 60, 0],
+                y: [0, 0, 0],
+              }}
+              transition={{
+                duration: 1.2,
+                times: [0, 0.6, 0.8],
+                ease: "easeInOut",
+              }}
+            />
+          </motion.div>
+        ))}
+
+        {/* Logo */}
+        <motion.div
+          className="w-20 h-20 bg-brand-primary rounded-2xl flex items-center justify-center rotate-3 relative z-10"
+          initial={{ scale: 0, rotate: -180 }}
+          animate={{ scale: 1, rotate: 3 }}
+          transition={{
+            delay: 0.4,
+            duration: 0.5,
+            type: "spring",
+            stiffness: 200,
+            damping: 15,
+          }}
+        >
+          <span className="text-white font-display font-bold text-4xl">m!</span>
+        </motion.div>
+
+        {/* Brand text */}
+        <motion.p
+          className="font-display font-bold text-3xl tracking-tight text-brand-primary mt-4"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.4, ease: "easeOut" }}
+        >
+          hey mervin!
+        </motion.p>
+      </div>
+    </motion.div>
+  );
+};
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -523,8 +610,13 @@ const Footer = () => {
 };
 
 export default function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
   return (
     <div className="min-h-screen bg-white">
+      <AnimatePresence>
+        {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
+      </AnimatePresence>
       <Navbar />
       <main>
         <Hero />
