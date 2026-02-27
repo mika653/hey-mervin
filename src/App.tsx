@@ -529,11 +529,10 @@ const About = () => {
           <div className="absolute -top-6 -left-6 w-32 h-32 bg-brand-mint/20 rounded-full blur-2xl pointer-events-none" />
           <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-brand-violet/20 rounded-full blur-2xl pointer-events-none" />
           <div className="aspect-[4/5] bg-slate-100 rounded-[2.5rem] overflow-hidden shadow-2xl rotate-2">
-            <img 
-              src="https://picsum.photos/seed/mervin/800/1000" 
-              alt="Mervin De Castro" 
+            <img
+              src="/mervin.png"
+              alt="Mervin De Castro"
               className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
             />
           </div>
           <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-blue-50 max-w-[240px] -rotate-2">
